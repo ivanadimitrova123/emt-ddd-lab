@@ -25,7 +25,7 @@ public class Order extends AbstractEntity<OrderId> {
     @Enumerated(EnumType.STRING)
     private Currency currency;
     @Enumerated(EnumType.STRING)
-    private OrderType orderItem;
+    private OrderType orderType;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrderItem> items;
    // @Embedded
@@ -39,12 +39,12 @@ public class Order extends AbstractEntity<OrderId> {
         this.items = new HashSet<>();
     }
 
-    public Order(Instant orderedOn, OrderState orderState, Currency currency, OrderType orderItem, User user) {
+    public Order(Instant orderedOn, OrderState orderState, Currency currency, OrderType orderType, User user) {
         super(DomainObjectId.randomId(OrderId.class));
         this.orderedOn = orderedOn;
         this.orderState = orderState;
         this.currency = currency;
-        this.orderItem = orderItem;
+        this.orderType = orderType;
         this.items = new HashSet<>();
         this.user = user;
     }
@@ -71,11 +71,11 @@ public class Order extends AbstractEntity<OrderId> {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Order order = (Order) o;
-        return Objects.equals(orderedOn, order.orderedOn) && orderState == order.orderState && currency == order.currency && orderItem == order.orderItem && Objects.equals(items, order.items) && Objects.equals(user, order.user);
+        return Objects.equals(orderedOn, order.orderedOn) && orderState == order.orderState && currency == order.currency && orderType == order.orderType && Objects.equals(items, order.items) && Objects.equals(user, order.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), orderedOn, orderState, currency, orderItem, items, user);
+        return Objects.hash(super.hashCode(), orderedOn, orderState, currency, orderType, items, user);
     }
 }

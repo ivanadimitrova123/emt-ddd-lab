@@ -47,9 +47,9 @@ public class OrderItem extends AbstractEntity<OrderItemId> {
         return Objects.equals(price, orderItem.price) && Objects.equals(quantity, orderItem.quantity) && Objects.equals(productId, orderItem.productId);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), price, quantity, productId);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(super.hashCode(), price, quantity, productId);
+//    }
 }
 

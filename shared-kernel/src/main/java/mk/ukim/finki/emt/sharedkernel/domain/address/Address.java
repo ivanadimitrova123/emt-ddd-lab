@@ -36,8 +36,8 @@ public class Address implements ValueObject {
         return Objects.equals(street, address.street) && Objects.equals(number, address.number) && Objects.equals(city, address.city) && Objects.equals(country, address.country);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(street, number, city, country);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(street, number, city, country);
+//    }
 }

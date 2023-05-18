@@ -29,20 +29,20 @@ public class UserResource {
     }
 
     @PostMapping("/create")
-    public void createUser(@RequestBody UserForm client, HttpServletResponse response) throws IOException {
-        userService.createClient(client);
+    public void createUser(@RequestBody UserForm user, HttpServletResponse response) throws IOException {
+        userService.createUser(user);
         response.sendRedirect("/api/users");
     }
 
     @PutMapping("/{id}")
-    public void updateUser(@PathVariable("id") UserId clientId, @RequestBody UserForm client, HttpServletResponse response) throws IOException {
-        userService.updateClient(clientId, client);
+    public void updateUser(@PathVariable("id") UserId userId, @RequestBody UserForm user, HttpServletResponse response) throws IOException {
+        userService.updateUser(userId, user);
         response.sendRedirect("/api/users");
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable("id") UserId clientId, HttpServletResponse response) throws IOException {
-        userService.deleteClient(clientId);
+    public void deleteUser(@PathVariable("id") UserId userId, HttpServletResponse response) throws IOException {
+        userService.deleteUser(userId);
         response.sendRedirect("/api/users");
     }
 }

@@ -1,6 +1,5 @@
 package mk.ukim.finki.emt.product.services.forms;
 
-
 import com.sun.istack.NotNull;
 import lombok.Data;
 import mk.ukim.finki.emt.product.domain.valueObjects.Quantity;

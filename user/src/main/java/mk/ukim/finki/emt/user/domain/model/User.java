@@ -31,7 +31,7 @@ public class User  extends AbstractEntity<UserId> {
         this.phone_number = phone_number;
     }
 
-    public void updateClient(String name, Address living_address, String email, String phone_number) {
+    public void updateUser(String name, Address living_address, String email, String phone_number) {
         this.name = name;
         this.living_address = living_address;
         this.email = email;

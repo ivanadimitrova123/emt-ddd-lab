@@ -9,11 +9,11 @@ import java.util.List;
 public interface  IUserService {
     User findById(UserId id);
 
-    UserId createClient(UserForm client);
+    UserId createUser(UserForm user);
 
-    User updateClient(UserId clientId, UserForm client);
+    User updateUser(UserId clientId, UserForm client);
 
-    void deleteClient(UserId clientId);
+    void deleteUser(UserId userId);
 
     List<User> listAll();
 }

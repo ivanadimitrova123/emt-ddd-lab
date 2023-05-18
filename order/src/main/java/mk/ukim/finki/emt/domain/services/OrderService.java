@@ -35,27 +35,21 @@ public class OrderService implements IOrderService {
     @Override
     public void cancelOrder(@NonNull OrderId id) {
         var order = findById(id);
-
         order.changeState(OrderState.FAILED);
-
         orderRepository.saveAndFlush(order);
     }
 
     @Override
     public void addItem(@NonNull OrderId id, @NonNull Product product, @NonNull Integer quantity) {
         var order = findById(id);
-
         order.addItem(product, quantity);
-
         orderRepository.saveAndFlush(order);
     }
 
     @Override
     public void removeItem(@NonNull OrderId id, @NonNull OrderItemId item) {
         var order = findById(id);
-
         order.removeItem(item);
-
         orderRepository.saveAndFlush(order);
     }
 

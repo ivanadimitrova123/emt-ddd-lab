@@ -23,24 +23,24 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public UserId createClient(@NonNull UserForm client) {
+    public UserId createUser(@NonNull UserForm user) {
 
-        var c = new User(client.getName(), client.getLiving_address(), client.getEmail(), client.getPhone_number());
-        return userRepository.saveAndFlush(c).getId();
+        var u = new User(user.getName(), user.getLiving_address(), user.getEmail(), user.getPhone_number());
+        return userRepository.saveAndFlush(u).getId();
     }
 
     @Override
-    public User updateClient(@NonNull UserId clientId, @NonNull UserForm client) {
-        var c = findById(clientId);
+    public User updateUser(@NonNull UserId userId, @NonNull UserForm user) {
+        var u = findById(userId);
 
-        c.updateClient(client.getName(), client.getLiving_address(), client.getEmail(), client.getPhone_number());
+        u.updateUser(user.getName(), user.getLiving_address(), user.getEmail(), user.getPhone_number());
 
-        return userRepository.saveAndFlush(c);
+        return userRepository.saveAndFlush(u);
     }
 
     @Override
-    public void deleteClient(@NonNull UserId clientId) {
-        userRepository.deleteById(clientId);
+    public void deleteUser(@NonNull UserId userId) {
+        userRepository.deleteById(userId);
     }
 
     @Override

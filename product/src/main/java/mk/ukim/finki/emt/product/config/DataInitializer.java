@@ -22,9 +22,7 @@ public class DataInitializer {
             productRepository.saveAll(List.of(
                     new Product("Product 1", new Quantity(1), new Money(Currency.MKD, 100)),
                     new Product("Product 2", new Quantity(2), new Money(Currency.MKD, 200)),
-                    new Product("Product 3", new Quantity(3), new Money(Currency.MKD, 300)),
-                    new Product("Product 4", new Quantity(4), new Money(Currency.MKD, 400)),
-                    new Product("Product 5", new Quantity(5), new Money(Currency.MKD, 500))
+                    new Product("Product 3", new Quantity(3), new Money(Currency.MKD, 300))
             ));
         }
     }

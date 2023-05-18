@@ -61,6 +61,4 @@ public class Product extends AbstractEntity<ProductId> {
         return Objects.hash(super.hashCode(), productName, quantity, price);
     }
 
-
-
 }
