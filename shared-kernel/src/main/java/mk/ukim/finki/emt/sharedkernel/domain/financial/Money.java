@@ -3,7 +3,7 @@ package mk.ukim.finki.emt.sharedkernel.domain.financial;
 import lombok.Getter;
 import lombok.NonNull;
 import mk.ukim.finki.emt.sharedkernel.domain.base.ValueObject;
-
+import java.util.Objects;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -46,6 +46,19 @@ public class Money implements ValueObject {
 
     public Money multiply(int m)  {
         return new Money(currency,amount*m);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Money money = (Money) o;
+        return Double.compare(money.amount, amount) == 0 && currency == money.currency;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(currency, amount);
     }
 
 }

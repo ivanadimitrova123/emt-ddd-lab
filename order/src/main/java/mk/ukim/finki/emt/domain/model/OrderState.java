@@ -4,5 +4,6 @@ public enum OrderState {
     RECEIVED,
     PROCESSING,
     CANCELED,
-    PROCESSED
+    PROCESSED,
+    FAILED
 }

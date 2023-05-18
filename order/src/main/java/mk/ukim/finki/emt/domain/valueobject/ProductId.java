@@ -6,4 +6,11 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class ProductId extends DomainObjectId {
+    public ProductId() {
+        super(DomainObjectId.randomId(ProductId.class).getId());
+    }
+
+    public ProductId(String id) {
+        super(id);
+    }
 }
